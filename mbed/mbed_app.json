@@ -1,0 +1,26 @@
+{
+    "config": {
+	"main-stack-size": {
+            "value": 65536
+	}
+    },
+    "requires": ["bare-metal"]
+    ,"macros": [
+        "DS_CNN",
+        "REALTIME_KWS_TEST",
+        "TF_LITE_DISABLE_X86_NEON",
+        "TF_LITE_STATIC_MEMORY"
+    ]
+    ,"macros": [
+        "DS_CNN",
+        "REALTIME_KWS_TEST",
+        "TF_LITE_DISABLE_X86_NEON",
+        "TF_LITE_STATIC_MEMORY"
+    ]
+    ,"macros": [
+        "DS_CNN",
+        "REALTIME_KWS_TEST",
+        "TF_LITE_DISABLE_X86_NEON",
+        "TF_LITE_STATIC_MEMORY"
+    ]
+}
