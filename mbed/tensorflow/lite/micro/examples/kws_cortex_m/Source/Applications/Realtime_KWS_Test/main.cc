@@ -33,7 +33,7 @@ int main()
     std::vector<std::string> outputClass = {
             "Silence",
             "Unknown",
-            "marvin",
+            "go",
             "sheila"
             };
 
