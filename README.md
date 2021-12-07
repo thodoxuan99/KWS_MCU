@@ -35,6 +35,6 @@ In file [main.cc](mbed/tensorflow/lite/micro/examples/kws_cortex_m/Source/Applic
 cd mbed
 #rm -rf /tensorflow/lite/micro/examples/kws_cortex_m
 #cp -r ../kws_cortex_m/ tensorflow/lite/micro/examples/
-mbed compile -m DISCO_F746NG -t GCC_ARM --source mbed --source mbed-os --source BSP_DISCO_F746NG --source tensorflow --source third_party  --source ../CMSIS_5/CMSIS/DSP/Include   --source ../CMSIS_5/CMSIS/Core/Include --source ../CMSIS_5/CMSIS/DSP/PrivateInclude/
+mbed compile -m DISCO_F746NG -t GCC_ARM --source .  --source ../CMSIS_5/CMSIS/DSP/Include   --source ../CMSIS_5/CMSIS/Core/Include --source ../CMSIS_5/CMSIS/DSP/PrivateInclude/
 ```
 

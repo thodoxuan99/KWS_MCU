@@ -46,7 +46,7 @@ int main()
     /* Averaging window for smoothing out the output predictions */
     int averagingWindowLen = 1;
     /* Detection threshold in percent */
-    int detectionThreshold = 50;
+    int detectionThreshold = 80;
 
     printf("Instantiating KWSWrapper object\r\n");
     KWSWrapper kwsObj{recordingWin, averagingWindowLen, outputClass, detectionThreshold};

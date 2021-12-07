@@ -1,2 +1,2 @@
-model_checkpoint_path: "ds_cnn_0.964_ckpt"
-all_model_checkpoint_paths: "ds_cnn_0.964_ckpt"
+model_checkpoint_path: "ds_cnn_0.967_ckpt"
+all_model_checkpoint_paths: "ds_cnn_0.967_ckpt"
