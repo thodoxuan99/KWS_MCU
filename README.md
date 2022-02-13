@@ -1,3 +1,23 @@
+
+# Toolchain
+GCC Arm Compiler 
+
+https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
+
+Arm Compiler 
+
+https://developer.arm.com/tools-and-software/embedded/arm-compiler/downloads/
+
+*Example*: 
+
+https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+
+```
+wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+
+tar -xf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+```
+
 # BUILD
 ## Dataset
 http://download.tensorflow.org/data/speech_commands_v0.02.tar.gz
@@ -6,12 +26,12 @@ http://download.tensorflow.org/data/speech_commands_v0.02.tar.gz
 ## Training
 - Wanted words : "Go" and "Sheila"
 ```
-python3 train.py --model_architecture ds_cnn --model_size_info 5 64 10 4 2 2 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 --dct_coefficient_count 10 --window_size_ms 40 --window_stride_ms 20 --learning_rate 0.0005,0.0001,0.00002 --how_many_training_steps 10000,10000,10000 --summaries_dir work/DS_CNN/DS_CNN1/retrain_logs --train_dir work/DS_CNN/DS_CNN1/training --wanted_words "go,sheila"
+python3 train.py --model_architecture ds_cnn --model_size_info 5 64 10 4 2 2 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 --dct_coefficient_count 10 --window_size_ms 40 --window_stride_ms 20 --learning_rate 0.0005,0.0001,0.00002 --how_many_training_steps 10000,10000,10000 --summaries_dir work/DS_CNN/DS_CNN1/retrain_logs --train_dir work/DS_CNN/DS_CNN1/training --wanted_words "go,up"
 ```
 
 ## Convert to Tflite
 ```
-python3 convert.py --model_architecture ds_cnn --model_size_info 5 64 10 4 2 2 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 --dct_coefficient_count 10 --window_size_ms 40 --window_stride_ms 20 --learning_rate 0.0005,0.0001,0.00002 --how_many_training_steps 10000,10000,10000 --summaries_dir work/DS_CNN/DS_CNN1/retrain_logs --train_dir work/DS_CNN/DS_CNN1/training --wanted_words "go,sheila" --checkpoint work/DS_CNN/DS_CNN1/training/best/ds_cnn_0.967_ckpt
+python3 convert.py --model_architecture ds_cnn --model_size_info 5 64 10 4 2 2 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 --dct_coefficient_count 10 --window_size_ms 40 --window_stride_ms 20 --learning_rate 0.0005,0.0001,0.00002 --how_many_training_steps 10000,10000,10000 --summaries_dir work/DS_CNN/DS_CNN1/retrain_logs --train_dir work/DS_CNN/DS_CNN1/training --wanted_words "go,up" --checkpoint work/DS_CNN/DS_CNN1/training/best/ds_cnn_0.967_ckpt
 ```
 ## Tflite to C array 
 ```
@@ -29,7 +49,8 @@ In file [main.cc](mbed/tensorflow/lite/micro/examples/kws_cortex_m/Source/Applic
     "sheila"
     };
 ```
-
+## Config Toolchain Location
+mbed config -G ARM_PATH "C:\Program Files\ARM"
 ## Build mbed.bin image for Board STM32F746NG
 ```
 cd mbed

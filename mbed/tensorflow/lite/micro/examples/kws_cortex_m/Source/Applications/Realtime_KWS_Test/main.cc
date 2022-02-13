@@ -34,7 +34,7 @@ int main()
             "Silence",
             "Unknown",
             "go",
-            "sheila"
+            "up"
             };
 
     /* Tune the following three parameters to improve the detection accuracy
