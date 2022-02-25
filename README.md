@@ -24,7 +24,7 @@ http://download.tensorflow.org/data/speech_commands_v0.02.tar.gz
 
 - Keep only 18 words set
 ## Training
-- Wanted words : "Go" and "Sheila"
+- Wanted words : "Go" and "Up"
 ```
 python3 train.py --model_architecture ds_cnn --model_size_info 5 64 10 4 2 2 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 64 3 3 1 1 --dct_coefficient_count 10 --window_size_ms 40 --window_stride_ms 20 --learning_rate 0.0005,0.0001,0.00002 --how_many_training_steps 10000,10000,10000 --summaries_dir work/DS_CNN/DS_CNN1/retrain_logs --train_dir work/DS_CNN/DS_CNN1/training --wanted_words "go,up"
 ```
@@ -46,7 +46,7 @@ In file [main.cc](mbed/tensorflow/lite/micro/examples/kws_cortex_m/Source/Applic
     "Silence",
     "Unknown",
     "go",
-    "sheila"
+    "up"
     };
 ```
 ## Config Toolchain Location
